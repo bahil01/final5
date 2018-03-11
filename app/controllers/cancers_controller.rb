@@ -10,7 +10,7 @@ class CancersController < ApplicationController
   end
 
   def index
-    @cancers = Cancer.all
+    @cancers = Cancer.page(params[:page]).per(10)
 
     render("cancers/index.html.erb")
   end
